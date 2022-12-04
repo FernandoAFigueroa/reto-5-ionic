@@ -4,7 +4,7 @@ import { IonicModule } from '@ionic/angular';
 import { FormsModule } from '@angular/forms';
 import { ScrollingModule } from '@angular/cdk/scrolling';
 import { HomePage } from './home.page';
-import { NewsCardComponent } from './news-card/news-card.component';
+
 import { NewsListComponent } from './news-list/news-list.component';
 import { AddNewsFormComponent } from './add-news-form/add-news-form.component';
 
@@ -18,11 +18,6 @@ import { HomePageRoutingModule } from './home-routing.module';
     HomePageRoutingModule,
     ScrollingModule,
   ],
-  declarations: [
-    HomePage,
-    NewsCardComponent,
-    NewsListComponent,
-    AddNewsFormComponent,
-  ],
+  declarations: [HomePage, NewsListComponent, AddNewsFormComponent],
 })
 export class HomePageModule {}

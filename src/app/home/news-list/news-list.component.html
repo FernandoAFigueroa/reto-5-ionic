@@ -1,3 +1,10 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>
+      Mis Noticias
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
 <ion-content class="container">
   <ion-list>
     <ion-card *ngFor="let item of items; let index">
@@ -9,6 +16,9 @@
       <ion-card-content>
         Here's a small text description for the card content. Nothing more, nothing less.
       </ion-card-content>
+      <ion-button expand="block" color="primary">Eliminar la noticia
+        <ion-icon slot="end" name="trash"></ion-icon>
+      </ion-button>
     </ion-card>
   </ion-list>
   <ion-infinite-scroll (ionInfinite)="onIonInfinite($event)">
