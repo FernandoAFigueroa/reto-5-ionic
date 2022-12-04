@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { FirebaseService } from '../services/firebase/firebase.service';
 
 @Component({
   selector: 'app-home',
@@ -6,7 +7,10 @@ import { Component } from '@angular/core';
   styleUrls: ['home.page.scss'],
 })
 export class HomePage {
-
-  constructor() {}
-
+  newsCount = 0;
+  constructor(private firebaseService: FirebaseService) {
+    this.firebaseService
+      .getNews()
+      .subscribe((res) => (this.newsCount = res.length));
+  }
 }

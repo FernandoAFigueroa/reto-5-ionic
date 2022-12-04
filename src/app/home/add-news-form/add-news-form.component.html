@@ -6,24 +6,24 @@
   </ion-toolbar>
 </ion-header>
 <ion-content color="light" class="container">
-  <form>
+  <form [formGroup]="newsHandlerForm" (ngSubmit)="formSubmit()">
     <ion-item class="form-item">
       <ion-label position="floating">Titulo de la noticia</ion-label>
-      <ion-input placeholder="Enter text"></ion-input>
+      <ion-input formControlName="title" type="text" placeholder="Enter text" required></ion-input>
     </ion-item>
     <ion-item class="form-item">
       <div class="input-section">
         <ion-label class="input-label">Agregue la fecha de la noticia</ion-label>
-        <ion-datetime presentation="day-month-year"></ion-datetime>
+        <ion-datetime formControlName="date" presentation="day-month-year"></ion-datetime>
       </div>
     </ion-item>
     <ion-item>
-      <ion-textarea placeholder="Agrega la descripcion" [autoGrow]="true">
+      <ion-textarea formControlName="description" placeholder="Agrega la descripcion" [autoGrow]="true" required>
         <ion-label position="fixed">Descripcion</ion-label>
       </ion-textarea>
     </ion-item>
     <div class="btn">
-      <ion-button expand="block" color="primary">Guardar la noticia
+      <ion-button type="submit" expand="block" color="primary">Guardar la noticia
         <ion-icon slot="end" name="person-add"></ion-icon>
       </ion-button>
     </div>

@@ -8,16 +8,16 @@
 </ion-header>
 <ion-content class="container">
   <ion-list>
-    <ion-card *ngFor="let item of items; let index">
-      <img [src]="'https://picsum.photos/400/200?random=' + index" alt="news" />
+    <ion-card *ngFor="let item of items; let i = index">
+      <img [src]="'https://picsum.photos/400/200?random=' + i" alt="news" />
       <ion-card-header>
-        <ion-card-title>Card Title</ion-card-title>
-        <ion-card-subtitle>Card Subtitle</ion-card-subtitle>
+        <ion-card-title>{{item.title}}</ion-card-title>
+        <ion-card-subtitle>{{item.date | date}}</ion-card-subtitle>
       </ion-card-header>
       <ion-card-content>
-        Here's a small text description for the card content. Nothing more, nothing less.
+        {{item.description}}
       </ion-card-content>
-      <ion-button expand="block" color="danger">Eliminar la noticia
+      <ion-button expand="block" color="danger" (click)="deleteNewsNote(item)">Eliminar la noticia
         <ion-icon slot="end" name="trash"></ion-icon>
       </ion-button>
     </ion-card>
