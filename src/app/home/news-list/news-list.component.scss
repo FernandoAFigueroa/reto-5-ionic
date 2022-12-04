@@ -1,7 +1,9 @@
 .container {
   position: relative;
 }
-
+ion-icon {
+  margin-left: 1rem;
+}
 cdk-virtual-scroll-viewport {
   margin-top: 70px;
   overflow: auto;
